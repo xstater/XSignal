@@ -1,7 +1,7 @@
 #ifndef _XSIGNAL_H_
 #define _XSIGNAL_H_
 
-#include <list>
+#include <vector>
 
 #define XSignalGroup(name) \
 struct name
@@ -23,7 +23,7 @@ namespace xsignal{
     template<class Type>
     class Signal{
     public:
-        using iterator = typename std::list<Type*>::iterator;
+        using iterator = typename std::vector<Type*>::iterator;
         //using const_iterator = std::list<Type*>::const_iterator;
     
         Signal() = default;
@@ -51,7 +51,7 @@ namespace xsignal{
         }
     protected:
     private:
-        std::list<Type*> m_slots;
+        std::vector<Type*> m_slots;
     };
 }
 
